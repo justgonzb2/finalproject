@@ -1,4 +1,4 @@
-org\nanohttpd\HelloServer.class
-org\nanohttpd\mysqldatabase.class
-org\nanohttpd\status.class
-org\nanohttpd\temp.class
+org/nanohttpd/mysqldatabase.class
+org/nanohttpd/HelloServer.class
+org/nanohttpd/status.class
+org/nanohttpd/temp.class

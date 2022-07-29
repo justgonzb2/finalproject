@@ -11,7 +11,7 @@ import java.util.List;
 public class mysqldatabase {
 
     private static final String ROOT = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "1354@Django";
 
     private final String mysqlUrl;
 
@@ -37,7 +37,7 @@ public class mysqldatabase {
     }
 
     public status getState() {
-        String select = "select * from state";
+        String select = "select * from status";
         try ( Connection conn = DriverManager.getConnection(mysqlUrl, ROOT, PASSWORD)) {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(select);
@@ -104,9 +104,9 @@ public class mysqldatabase {
         String update = null;
 
         if (value) {
-            update = "update state set state = ''";
+            update = "update status set state = ''";
         } else {
-            update = "update state set state = NULL";
+            update = "update status set state = NULL";
         }
 
         try ( Connection conn = DriverManager.getConnection(mysqlUrl, ROOT, PASSWORD)) {
@@ -123,9 +123,9 @@ public class mysqldatabase {
     public String addState(status state) {
         String insert = null;
         if (state.isOn()) {
-            insert = "insert into state (state values ('')";
+            insert = "insert into status (state values ('')";
         } else {
-            insert = "insert into state (state) values (NULL)";
+            insert = "insert into status (state) values (NULL)";
         }
 
         try ( Connection conn = DriverManager.getConnection(mysqlUrl, ROOT, PASSWORD)) {
